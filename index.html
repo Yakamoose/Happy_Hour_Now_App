@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Happy Hour Now</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <!--
+    "https://www.aada.edu/template/frontend/img/campus-overview/la-1.jpg"palms
+    "https://ak7.picdn.net/shutterstock/videos/14914237/thumb/2.jpg?i10c=img.resize(height:160)"city
+    -->
+
+    <img src="https://ak7.picdn.net/shutterstock/videos/14914237/thumb/2.jpg?i10c=img.resize(height:160)" alt="background image">
+
+    <section class="start-page">
+
+      <div class="description">
+        <p>Find a Happy Hour in West LA happening RIGHT NOW!<br><em>"Drink up West LA!"</em></p>
+      </div>
+
+      <div class="search-bar" id="locationField">
+        <form  class="js-user-loc">
+          <input id="autocomplete" onFocus="geolocate()" type="text" class="js-user-input" placeholder="Enter Your Location" aria-label="Search">
+          <button type="submit" class="user-loc-btn">Search</button>
+        </form>
+      </div>
+
+      <form class="js-current-loc">
+        <button type="submit" class="current-loc-btn">Current Location  <!--<img src="https://cdn1.iconfinder.com/data/icons/maps-7/48/Current_Position-512.png" class="current-loc-img" alt="current location image">-->
+        </button>
+      </form>
+
+    </section>
+
+
+    <script src="index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXs4IQT91vKSLc_pRvXlKHS_XYU2b_cDM&libraries=places&callback=initAutocomplete"
+        async defer></script>
+  </body>
+</html>

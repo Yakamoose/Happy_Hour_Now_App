@@ -1,0 +1,65 @@
+
+  #left-panel {
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+  }
+  #left-panel i {
+    font-size: 12px;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #map {
+    float: right;
+    height: 100%;
+    width: 50%;
+    position: fixed;;
+
+
+  }
+  #left-panel {
+    float: left;
+    width: 45%;
+    padding-left: 3%;
+    margin-top: 50px;
+  }
+  #output, #results {
+    font-size: 13px;
+  }
+p {
+  font-weight: bolder;
+}
+
+  nav {
+    background-color: #4ABDAC;
+
+    height: 80px;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    color: ivory;
+    margin-top:0;
+  }
+
+  h1, .title {
+    padding-top: 18px;
+    margin-top:0;
+    font-family: 'Poiret One', cursive;
+    color: ivory;
+    font-size: 35px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #4ABDAC;
+  }
+
+
+
+  .container {
+    padding: 10px 0px;
+    max-width: 450px;
+    border-top: 4px solid #4ABDAC;
+  }

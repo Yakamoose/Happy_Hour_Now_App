@@ -1,0 +1,23 @@
+{
+  "name": "HHapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yakamoose/HHapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yakamoose/HHapp/issues"
+  },
+  "homepage": "https://github.com/Yakamoose/HHapp#readme",
+  "dependencies": {
+    "yelp-api": "^1.0.3"
+  }
+}

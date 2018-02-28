@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Happy Hour Now</title>
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+    <link href="results-page.css" rel="stylesheet" type="text/css"
+
+  </head>
+
+
+  <body>
+
+		<nav>
+      <a class="title restart-btn" href="index.html"><h1>It's Happy Hour Somewhere (in West LA)</h1></a>
+    </nav>
+
+    <div id="left-panel">
+      <div id="inputs"></div>
+
+      <div>
+        <p class="results-title">Results</p>
+      </div>
+
+      <div id="output"></div>
+      <div id="results"></div>
+    </div>
+
+    <div id="map"></div>
+
+
+
+
+    <script src="results-page.js"></script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXs4IQT91vKSLc_pRvXlKHS_XYU2b_cDM&callback=initMap">
+    </script>
+  </body>
+</html>
