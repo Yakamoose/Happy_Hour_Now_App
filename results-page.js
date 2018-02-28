@@ -324,7 +324,7 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
           day: [0, 1, 2, 3, 4, 5, 6],
           hhStart: 17.5,
           hhEnd: 18.5,
-          deals: 'Drinks & Food',
+          deals: 'Secret HH Menu not available online',
         }],
         deals: '',
         hhEnd: '',
@@ -516,8 +516,8 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
             let hour = d.getHours();
             let minutes = d.getMinutes()/60;
 
-            let currentTime = hour + minutes;
-            //let currentTime = 18;
+            //let currentTime = hour + minutes;
+            let currentTime = 18;
 
             let openNowResults = [];
 
@@ -546,19 +546,19 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
               });
             //limit results to 10 results
             let finalResults = [];
-            for(let i=0; i < 10; i++) {
+            for(let i=0; i < 10 && i < openNowResults.length; i++) {
               finalResults.push(openNowResults[i]);
             }
-
+            console.log(finalResults);
             //Show openNowResults on map
-            function sendToMap() {
+//            function sendToMap() {
               for (var j = 0; j < finalResults.length; j++) {
                  geocoder.geocode({'address': finalResults[j].address},
                  showGeocodedAddressOnMap(true, finalResults[j].name));
               };
-            }
+    //        }
             //setTimeout(sendToMap, 1000);
-            sendToMap();
+  //          sendToMap();
 
             if(openNowResults.length === 0) {
               //change window to no results page
@@ -568,8 +568,6 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
 
             getYelpAtts(openNowResults);
             //outputDiv.innerHTML += openNowResults.length + " results showing. <br>";
-
-
         });
       }
 
@@ -604,7 +602,7 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
             return 0;
             });
           let finalResults = [];
-          for(let i=0; i < 10; i++) {
+          for(let i=0; i < 10 && i < openNowResults.length; i++) {
             finalResults.push(openNowResults[i]);
           }
           console.log(finalResults);
@@ -635,11 +633,11 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
       resultsDiv.innerHTML = '';
 
       function renderResults(results) {
-
+        console.log(results);
 
 
           results.forEach(function(result) {
-          resultsDiv.innerHTML += '<div class="container">Name: '+ result.name + '  ||   Address: ' + result.address +
+          resultsDiv.innerHTML += '<div class="container">Name: '+ result.name + '  ||  ' + result.address +
             '<br> Type: ' + result.type + ' ||  Phone: ' + result.phone + '<br> Rating: '
             + result.rating + '/5  ||  Deals: <a href="' +result.hhMenuLink+'" target="_blank">' + result.deals + '</a><br>' + result.distance +
             ' mi || <a href="'+displayDirections(result.address)+'" target="_blank">'+result.driveTime+ '</a><br>Happy Hour ends at '
