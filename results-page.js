@@ -315,7 +315,7 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
         yelpId: 'sunny-spot-venice-2',
         hhMenuLink: 'http://www.sunnyspotvenice.com/menus/',
         },
-
+/*
         {
         name: 'Wabi Sabi',
         address: '1635 Abbot Kinney Blvd, Venice, CA 90291',
@@ -336,7 +336,7 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
         yelpId: 'wabi-sabi-sushi-and-solana-venice',
         hhMenuLink: '#',
         },
-
+*/
         {
         name: 'Baja Cantina',
         address: '311 Washington Blvd, Marina Del Rey, CA 90292',
@@ -497,7 +497,7 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
             //Add Origin/userLocation to the map
             geocoder.geocode({'address': originList[0]},
               showGeocodedAddressOnMap(false));
-              outputDiv.innerHTML += 'Your location: '+originList[0] + '<br>';
+              outputDiv.innerHTML += 'Your Location: '+originList[0] + '<br>';
           }
 
          for (var j = 0; j < results.length; j++) {
@@ -718,3 +718,10 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
       }
 
       $(watchSubmit);
+
+      $body = $("body");
+
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+     ajaxStop: function() { $body.removeClass("loading"); }
+});

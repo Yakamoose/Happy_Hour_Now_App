@@ -1,32 +1,48 @@
 
-  #left-panel {
-    font-family: 'Roboto','sans-serif';
-    line-height: 30px;
-    padding-left: 10px;
-  }
-  #left-panel i {
-    font-size: 12px;
-  }
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  #map {
-    float: right;
-    height: 100%;
-    width: 50%;
-    position: fixed;;
-  }
-  #left-panel {
-    float: left;
-    width: 45%;
-    padding-left: 3%;
-    margin-top: 50px;
-  }
-  #output, #results {
-    font-size: 13px;
-  }
+#left-panel {
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+  float: left;
+  width: 45%;
+  padding-left: 3%;
+  margin-top: 40px;
+}
+#left-panel i {
+  font-size: 12px;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  float: right;
+  height: 100%;
+  width: 50%;
+}
+.modal {
+  display:    none;
+  position:   fixed;
+  z-index:    1000;
+  top:        0;
+  left:       0;
+  height:     100%;
+  width:      100%;
+  background: rgba( 255, 255, 255, .8 )
+              url('https://cdn.dribbble.com/users/1053664/screenshots/3658436/beerfill_large.gif')
+              50% 50%
+              no-repeat;
+}
+
+body.loading .modal {
+  display: block;
+}
+
+#output, #results {
+  font-size: 13px;
+}
+
 p {
   font-weight: bolder;
 }
@@ -39,6 +55,7 @@ p {
     font-family: 'Poiret One', cursive;
     color: ivory;
     margin-top:0;
+
   }
 
   h1, .title {
@@ -53,8 +70,6 @@ p {
     text-decoration: none;
     color: #4ABDAC;
   }
-
-
 
   .container {
     padding: 10px 0px;
