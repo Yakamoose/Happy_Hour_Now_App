@@ -7,11 +7,6 @@ html {
 }
 
 body {
-  background-image: url("file:///C:/Users/xeric/Desktop/thinkful_projects/HHapp/index.html");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
   background-color: orange;
 }
 
@@ -44,7 +39,7 @@ section {
   margin: 300px auto 0 auto;
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 900;
   color: orange;
 }
