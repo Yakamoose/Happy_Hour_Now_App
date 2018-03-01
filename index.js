@@ -1,5 +1,3 @@
-
-
 //Get Geolocation if click 'current location'
 
 function watchSubmitCurrentLoc() {
@@ -13,6 +11,9 @@ function watchSubmitCurrentLoc() {
     }
 
     function success(pos) {
+      localStorage.removeItem('lat');
+      localStorage.removeItem('long');
+      localStorage.removeItem('address');
 
       localStorage.setItem('lat', pos.coords.latitude);
       localStorage.setItem('long', pos.coords.longitude);
@@ -74,6 +75,9 @@ function watchSubmitUserLoc() {
       event.preventDefault();
       const userLocation = $(event.currentTarget).find('.js-user-input').val();
       $(event.currentTarget).find('.js-user-input').val("");
+      localStorage.removeItem('lat');
+      localStorage.removeItem('long');
+      localStorage.removeItem('address');
       localStorage.setItem('address', userLocation);
 
       window.location = 'results-page.html';
@@ -81,6 +85,3 @@ function watchSubmitUserLoc() {
 }
 
 $(watchSubmitUserLoc);
-
-
-//-----------------------Get distance from bars to user----------------------------------------

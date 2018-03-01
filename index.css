@@ -12,7 +12,8 @@ body {
 
 img {
   display: inline-block;
-  width: 100%;
+
+  height: 100%;
   filter: blur(1px) grayscale(.4);
   position: fixed;
     top: 0;
@@ -47,6 +48,8 @@ section {
 input {
   position: relative;
   width: 200px;
+  height: 31px;
+
 }
 
 .search-bar {
@@ -56,9 +59,41 @@ input {
 
 .current-loc-btn {
   display: block;
-  margin: 15px auto;
+  margin: 10px auto;
   position: relative
 }
+
+.user-loc-btn {
+  margin-left: 10px;
+}
+
+button {
+
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;s
+  border-radius: 8px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bolder;
+  color: White;
+  font-size: 16px;
+  background: orange;
+  padding: 10px 20px 25px 20px;
+  text-decoration: none;
+  border: none;
+  height: 18px;
+}
+
+button:hover {
+  background: darkorange;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 1200px) {
+  img {
+    width: 100%;
+  }
+}
+
 
 @media only screen and (max-width: 1000px) {
   img {
