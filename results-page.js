@@ -95,7 +95,7 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
         {
         name: 'Hayden',
         address: '8820 Washington Blvd, Culver City, CA 90232',
-        type: 'Cafe, Wine Bar, Waffles',
+        type: 'Cafe/Wine Bar',
         happyHours: [{
           day: [0, 1, 2, 3, 4, 5, 6],
           hhStart: 17,
@@ -116,7 +116,7 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
         {
         name: 'Little Ruby',
         address: '109 Santa Monica Blvd, Santa Monica, CA 90401',
-        type: 'Australian, Burgers',
+        type: 'Australian',
         happyHours: [{
           day: [1, 2, 3, 4, 5],
           hhStart: 16,
@@ -181,7 +181,7 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
         {
         name: 'Michaels',
         address: '1147 3rd St, Santa Monica, CA 90403',
-        type: 'American, Bar',
+        type: 'American',
         happyHours: [{
           day: [1, 2, 3, 4, 5, 6],
           hhStart: 17,
@@ -409,7 +409,7 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
         {
         name: 'The Anchor',
         address: '235 Main St, Venice, CA 90291',
-        type: 'American/Seafood',
+        type: 'Seafood',
         happyHours: [{
           day: [2, 3, 4, 5],
           hhStart: 15,
@@ -516,8 +516,8 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
             let hour = d.getHours();
             let minutes = d.getMinutes()/60;
 
-            let currentTime = hour + minutes;
-            //let currentTime = 18;
+            //let currentTime = hour + minutes;
+            let currentTime = 18;
 
             let openNowResults = [];
 
