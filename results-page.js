@@ -516,8 +516,8 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
             let hour = d.getHours();
             let minutes = d.getMinutes()/60;
 
-            //let currentTime = hour + minutes;
-            let currentTime = 18;
+            let currentTime = hour + minutes;
+            //let currentTime = 18;
 
             let openNowResults = [];
 
