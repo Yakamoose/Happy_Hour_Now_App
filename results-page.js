@@ -12,8 +12,6 @@ const YELP_URL = "https://api.yelp.com/v3/businesses/";
             console.log(destination);
             console.log('testing in get json');
           })
-
-
   const destination = require('./destinations');
   console.log('here comes destination');
   console.log(destination);
