@@ -571,9 +571,10 @@ const YELP_URL = "https://api.yelp.com/v3/businesses/";
         Promise.all(openNowResults.map(function(result) {
 
           const URL = YELP_URL+result.yelpId;
+          console.log(URL);
           //CORS hack `https://cors-anywhere.herokuapp.com/${URL}`
           const settings = {
-            url: `https://cors-anywhere.herokuapp.com/${URL}`,
+            url: `http://anyorigin.com/go/?url=${URL}`,
             headers: {
               authorization: 'Bearer IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn1MOWP7qhcTwuwtqeg2NqIAaE12YvRSFi8KUM5icnb7rBQpN_Snsonrlo_Cu7nIz9t4WnYx',
             },
@@ -624,6 +625,7 @@ const YELP_URL = "https://api.yelp.com/v3/businesses/";
       }
 
 
+
       var resultsDiv = document.getElementById('results');
       resultsDiv.innerHTML = '';
 
@@ -657,7 +659,6 @@ const YELP_URL = "https://api.yelp.com/v3/businesses/";
 
         var hours = Number(time[0]);
         var minutes = (Number(time[1])*6);
-
         var timeValue;
 
         if (hours > 0 && hours <= 12)
