@@ -1,5 +1,4 @@
 const YELP_URL = "https://api.yelp.com/v3/businesses/";
-const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn1MOWP7qhcTwuwtqeg2NqIAaE12YvRSFi8KUM5icnb7rBQpN_Snsonrlo_Cu7nIz9t4WnYx";
 
 
 
@@ -549,25 +548,21 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
             for(let i=0; i < 10 && i < openNowResults.length; i++) {
               finalResults.push(openNowResults[i]);
             }
-            console.log(finalResults);
-            //Show openNowResults on map
-//            function sendToMap() {
-              for (var j = 0; j < finalResults.length; j++) {
-                 geocoder.geocode({'address': finalResults[j].address},
-                 showGeocodedAddressOnMap(true, finalResults[j].name));
-              };
-    //        }
-            //setTimeout(sendToMap, 1000);
-  //          sendToMap();
 
+            //Show openNowResults on map
+            for (var j = 0; j < finalResults.length; j++) {
+               geocoder.geocode({'address': finalResults[j].address},
+               showGeocodedAddressOnMap(true, finalResults[j].name));
+            };
+
+            //change window to no results page
             if(openNowResults.length === 0) {
-              //change window to no results page
               window.location = 'no-results.html';
               console.log('in results output');
             }
 
+            //Sends closest 10 or less bars to get attributes and then sent to display from this function
             getYelpAtts(openNowResults);
-            //outputDiv.innerHTML += openNowResults.length + " results showing. <br>";
         });
       }
 
@@ -576,7 +571,7 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
         Promise.all(openNowResults.map(function(result) {
 
           const URL = YELP_URL+result.yelpId;
-          //CORS hac `https://cors-anywhere.herokuapp.com/${URL}`
+          //CORS hack `https://cors-anywhere.herokuapp.com/${URL}`
           const settings = {
             url: `https://cors-anywhere.herokuapp.com/${URL}`,
             headers: {
@@ -633,9 +628,6 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
       resultsDiv.innerHTML = '';
 
       function renderResults(results) {
-        console.log(results);
-
-
           results.forEach(function(result) {
           resultsDiv.innerHTML += '<div class="container">Name: '+ result.name + '  ||  ' + result.address +
             '<br> Type: ' + result.type + ' ||  Phone: ' + result.phone + '<br> Rating: '
@@ -643,7 +635,6 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
             ' mi || <a href="'+displayDirections(result.address)+'" target="_blank">'+result.driveTime+ '</a><br>Happy Hour ends at '
             + result.hhEnd+ '<br></div>';
           });
-
       }
 
       function displayDirections(end){
@@ -664,11 +655,9 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
       function convertTime(time) {
         time = time.split('.'); // convert to array
 
-        // fetch
         var hours = Number(time[0]);
         var minutes = (Number(time[1])*6);
 
-        // calculate
         var timeValue;
 
         if (hours > 0 && hours <= 12)
@@ -706,7 +695,6 @@ const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn
 
       //function to restart search
       //clear local storage
-
       function watchSubmit() {
         $("a").click(event => {
           event.preventDefault();

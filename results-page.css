@@ -86,7 +86,6 @@ a {
   }
 
   #left-panel {
-    font-family: 'Roboto','sans-serif';
     line-height: 25px;
     padding: 5px 15px;
     text-align: center;
@@ -94,33 +93,16 @@ a {
     margin-top: 10px;
     align-content: center;
   }
-  #left-panel i {
-    font-size: 12px;
-  }
-
   .container {
     display: inline-block;
     text-align: left;
     padding-right: 10px;
     min-width: 450px;
-    border-top: 4px solid #4ABDAC;
-  }
-
-  nav {
-    background-color: #4ABDAC;
-    height: 80px;
-    text-align: center;
-    font-family: 'Poiret One', cursive;
-    color: ivory;
-    margin-top:0;
   }
 
   h1, .title {
     padding-top: 22px;
     vertical-align: middle;
-    margin-top:0;
-    font-family: 'Poiret One', cursive;
-    color: ivory;
     font-size: 25px;
   }
 
@@ -129,11 +111,7 @@ a {
 @media only screen and (max-width: 445px) {
   h1, .title {
     padding-top: 10px;
-  
     vertical-align: middle;
-    margin-top:0;
-    font-family: 'Poiret One', cursive;
-    color: ivory;
     font-size: 25px;
   }
   .container {
