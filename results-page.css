@@ -105,7 +105,6 @@ a {
     vertical-align: middle;
     font-size: 25px;
   }
-
 }
 
 @media only screen and (max-width: 445px) {
@@ -121,5 +120,35 @@ a {
     border-top: 4px solid #4ABDAC;
     min-width: inherit;
   }
+}
 
+@media only screen
+  and (min-device-width: 315px)
+  and (max-device-width: 812px) {
+    #map {
+      display: block;
+      height: 40%;
+      width: 100%;
+    }
+
+    #left-panel {
+      line-height: 25px;
+      padding: 5px 15px;
+      text-align: center;
+      width: 90%;
+      margin-top: 10px;
+      align-content: center;
+    }
+    .container {
+      display: inline-block;
+      text-align: left;
+      padding-right: 10px;
+      min-width: 450px;
+    }
+
+    h1, .title {
+      padding-top: 22px;
+      vertical-align: middle;
+      font-size: 30px;
+    }
 }
