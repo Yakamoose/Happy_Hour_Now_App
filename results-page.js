@@ -1,24 +1,5 @@
 const YELP_URL = "https://api.yelp.com/v3/businesses/";
 
-
-
-
-        //assign json destinations object to this file
-
-/*        var destination = [];
-        $.getJSON('destinations.json')
-          .done(function(data) {
-            destination = data;
-            console.log(destination);
-            console.log('testing in get json');
-          })
-  const destination = require('./destinations');
-  console.log('here comes destination');
-  console.log(destination);
-*/
-
-
-
       var destinations = [
         {
         name: 'Brick + Mortar',
