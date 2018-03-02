@@ -422,7 +422,87 @@ const YELP_URL = "https://api.yelp.com/v3/businesses/";
         image: '',
         yelpId: 'the-anchor-venice',
         hhMenuLink: 'http://theanchorvenice.squarespace.com/happy-hour-menu-fall-2015/',
-        }];
+        },
+        {
+        name: 'Ashland Hill',
+        address: '2807 Main St, Santa Monica, CA 90405',
+        type: 'Beer Garden',
+        happyHours: [{
+          day: [1, 2, 3, 4, 5],
+          hhStart: 15,
+          hhEnd: 18,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        hhEnd: '',
+        distance: '',
+        driveTime: '',
+        phone: '',
+        rating: '',
+        image: '',
+        yelpId: 'ashland-hill-santa-monica-3',
+        hhMenuLink: 'http://www.ashlandhill.com/',
+        },
+        {
+        name:'The Misfit',
+        address: '225 Santa Monica Blvd, Santa Monica, CA 90401',
+        type: 'American',
+        happyHours: [{
+          day: [0, 1, 2, 3, 4, 5, 6],
+          hhStart: 12,
+          hhEnd: 19,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        hhEnd: '',
+        distance: '',
+        driveTime: '',
+        phone: '',
+        rating: '',
+        image: '',
+        yelpId: 'the-misfit-restaurant-bar-santa-monica',
+        hhMenuLink: 'http://www.themisfitbar.com/',
+      },
+      {
+      name: 'The Arsenal',
+      address: '12012 W Pico Blvd, Los Angeles, CA 90064',
+      type: 'Lounge',
+      happyHours: [{
+        day: [0, 1, 2, 3, 4, 5, 6],
+        hhStart: 17,
+        hhEnd: 19,
+        deals: 'Drinks & Food',
+      }],
+      deals: '',
+      hhEnd: '',
+      distance: '',
+      driveTime: '',
+      phone: '',
+      rating: '',
+      image: '',
+      yelpId: 'the-arsenal-los-angeles-2',
+      hhMenuLink: 'http://arsenalbar.com/happy-hour/',
+      },
+      {
+      name: 'Backstage Bar & Grill',
+      address: '10400 Culver Blvd, Culver City, CA 90232',
+      type: 'Karaoke Bar',
+      happyHours: [{
+        day: [0, 1, 2, 3, 4, 5, 6],
+        hhStart: 16,
+        hhEnd: 20,
+        deals: 'Drinks & Food',
+      }],
+      deals: '',
+      hhEnd: '',
+      distance: '',
+      driveTime: '',
+      phone: '',
+      rating: '',
+      image: '',
+      yelpId: 'backstage-bar-and-grill-culver-city',
+      hhMenuLink: 'http://www.backstageculvercity.com/pdf/MenuDrink20151018.pdf',
+      }];
 
       function initMap() {
         var bounds = new google.maps.LatLngBounds;
@@ -556,7 +636,6 @@ const YELP_URL = "https://api.yelp.com/v3/businesses/";
             //change window to no results page
             if(openNowResults.length === 0) {
               window.location = 'no-results.html';
-              console.log('in results output');
             }
 
             //Sends closest 10 or less bars to get attributes and then sent to display from this function
@@ -569,7 +648,6 @@ const YELP_URL = "https://api.yelp.com/v3/businesses/";
         Promise.all(openNowResults.map(function(result) {
 
           const URL = YELP_URL+result.yelpId;
-          console.log(URL);
           //CORS hack `https://cors-anywhere.herokuapp.com/${URL}`
           const settings = {
             url: `https://cors-anywhere.herokuapp.com/${URL}`,
@@ -601,7 +679,6 @@ const YELP_URL = "https://api.yelp.com/v3/businesses/";
           for(let i=0; i < 10 && i < openNowResults.length; i++) {
             finalResults.push(openNowResults[i]);
           }
-          console.log(finalResults);
           renderResults(finalResults);
           return Promise.all(finalResults);
 
