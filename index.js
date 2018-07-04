@@ -6,7 +6,7 @@ function watchSubmitCurrentLoc() {
 
     var options = {
       enableHighAccuracy: true,
-      timeout: 5000,
+      //timeout: 5000,
       maximumAge: 0
     }
 
