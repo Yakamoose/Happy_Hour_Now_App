@@ -42,7 +42,7 @@ section {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 23px;
   font-weight: 900;
-  color: orange;
+  color: #4ABDAC;
 }
 
 input {
@@ -74,7 +74,7 @@ button {
   font-weight: bolder;
   color: White;
   font-size: 16px;
-  background: orange;
+  background: #4ABDAC;
   padding: 10px 20px 25px 20px;
   text-decoration: none;
   border: none;
