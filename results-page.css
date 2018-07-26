@@ -33,7 +33,7 @@ html, body {
   height:     100%;
   width:      100%;
   background: rgba( 255, 255, 255, .8 )
-              url('https://cdn.dribbble.com/users/1053664/screenshots/3658439/beerfill_large.gif')
+              url('./beerfill_large.gif')
               50% 50%
               no-repeat;
 }
