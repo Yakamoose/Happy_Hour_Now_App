@@ -631,6 +631,8 @@ const YELP_URL = "https://api.yelp.com/v3/businesses/";
             //Add Origin/userLocation to the map
             geocoder.geocode({'address': originList[0]},
               showGeocodedAddressOnMap(false));
+              outputDiv.innerHTML += '<a href="./index.html" class="redo-search">Search New Location</a><br>';
+
               outputDiv.innerHTML += 'Your Location: '+originList[0] + '<br>';
           }
 
@@ -764,13 +766,18 @@ const YELP_URL = "https://api.yelp.com/v3/businesses/";
       resultsDiv.innerHTML = '';
 
       function renderResults(results) {
-          results.forEach(function(result) {
-          resultsDiv.innerHTML += '<div class="container">Name: '+ result.name + '  ||  ' + result.address +
-            '<br> Type: ' + result.type + ' ||  Phone: ' + result.phone + '<br> Rating: '
-            + result.rating + '/5  ||  Deals: <a href="' +result.hhMenuLink+'" target="_blank">' + result.deals + '</a><br>' + result.distance +
-            ' mi || <a href="'+displayDirections(result.address)+'" target="_blank">'+result.driveTime+ '</a><br>Happy Hour ends at '
-            + result.hhEnd+ '<br></div>';
-          });
+          if(results[0].name == null) {
+            resultsDiv.innerHTML = '<div class="container">The CORS Proxy hack used to build this site gets overloaded sometimes.  Please hit the refresh button in your browser to retry search.</div>';
+          }
+          else {
+            results.forEach(function(result) {
+            resultsDiv.innerHTML += '<div class="container">Name: '+ result.name + '  ||  ' + result.address +
+              '<br> Type: ' + result.type + ' ||  Phone: ' + result.phone + '<br> Rating: '
+              + result.rating + '/5  ||  Deals: <a href="' +result.hhMenuLink+'" target="_blank">' + result.deals + '</a><br>' + result.distance +
+              ' mi || <a href="'+displayDirections(result.address)+'" target="_blank">'+result.driveTime+ '</a><br>Happy Hour ends at '
+              + result.hhEnd+ '<br></div>';
+            });
+          }
       }
 
       function displayDirections(end){
